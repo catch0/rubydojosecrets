@@ -1,0 +1,27 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#register{
+    display:inline-block;
+    width: 190px;
+    margin-left: 62px;
+}
+#login{
+    display:inline-block;
+    width: 190px;
+    margin-left:4px;
+}
+.error {
+    color: yellow;
+    background-color: red;
+}
+#left {
+    float: left;
+}
+#right {
+    position: relative;
+    float: right;
+}
+.list{
+    vertical-align: top;
+}

@@ -1,0 +1,34 @@
+<h2> <%= @user.first_name %>'s profile </h2>
+<h3> Submit a secret</h3>
+<form action = "/secrets" method="post">
+    <div> 
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <textarea name=secret[content]>
+    </textarea>
+    </div>
+    <div> 
+<input type="submit" value="submit secret">
+    </div>
+</form>
+<% if flash[:secret_errors] %>
+ <% flash[:secret_errors].each do |e| %>
+<p class="error"><%= e %> </p>
+<% end %>
+<% end %>
+<div id = "left" class="list">
+<h3> My Liked Secrets </h3>
+<% @secrets_liked.each do |secret|%>
+<p> <%= secret.content %> </p>
+<p> <%= secret.likes.length %> Likes </p>
+<% end %>
+</div>
+<div id = "right" class="list">
+<h3> My Secrets I've submitted</h3>
+<% @secrets.each do |secret| %>
+    <p> <%= secret.content %></p>
+    <p> <%= secret.likes.length %> Likes</p>
+    
+    <% end %>
+
+</div>
+<a href="/sessions" data-method="delete" class="logout"> Logout</a>
